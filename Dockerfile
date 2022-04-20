@@ -8,6 +8,6 @@ ADD https://gitlab.ost.ch/tech/inf/public/meta-ost/-/package_files/2797/download
 RUN chmod +x /tmp/ost-distro-glibc-x86_64-ost-image-cortexa8hf-neon-bblue-toolchain-1.0.sh
 RUN /tmp/ost-distro-glibc-x86_64-ost-image-cortexa8hf-neon-bblue-toolchain-1.0.sh
 RUN rm /tmp/ost-distro-glibc-x86_64-ost-image-cortexa8hf-neon-bblue-toolchain-1.0.sh
-RUN echo 'source /opt/ost-distro/1.0/environment-setup-cortexa8hf-neon-poky-linux-gnueabi' >> /root/.bashrc
+RUN echo 'source /opt/ost-devel/1.0/environment-setup-cortexa8hf-neon-poky-linux-gnueabi' >> /root/.bashrc
 
 CMD [ "/bin/bash" ]
