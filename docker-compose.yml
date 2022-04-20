@@ -2,6 +2,6 @@ version: '3.7'
 
 services:
   AMRS:
-    image: ghcr.io/jonas-frei/amrs-docker:latest
+    image: ghcr.io/jonas-frei/eeros-docker-bbblue:latest
     network_mode: host
     tty: true
