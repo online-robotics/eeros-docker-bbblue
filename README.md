@@ -24,7 +24,7 @@ git clone https://github.com/jonas-frei/amrs-docker.git
 * Press `F1` and select `Remote-Containers: Open Folder in Container...`. Then select the current folder and wait until the container is up and running (this might take several minutes for the first time since it has to download the container).
 
 # Test the installation
-To test if everything worked, you can build the included basic EEROS project by clicking on the build button in the taskbar at the bottom of the visual studio code window. Once the build finished you can connect the Beaglebone Blue over USB and copy the executable with
+To test if everything worked, you can build the included basic EEROS project by clicking on the build button in the taskbar at the bottom of the visual studio code window. Once the build finished successfully you can connect the Beaglebone Blue over USB. Make sure that the SD card with the EEROS image is inserted and press the SD card button on the Beaglebone Blue before applying power. Once the Beaglebone Blue finished booting you can copy the executable with
 ```
 scp build/template_project ost@192.168.7.2:/tmp
 ```
