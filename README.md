@@ -32,7 +32,7 @@ When prompted for the password please enter `ost`. After copying the file, you c
 ```
 ssh ost@192.168.7.2
 ```
-The password is again `ost`. On the beaglebone blue you can then start the application with
+The password is again `ost`. On the Beaglebone Blue you can then start the application with
 ```
 /tmp/template_project
 ```
