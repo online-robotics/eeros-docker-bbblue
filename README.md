@@ -28,11 +28,11 @@ To test if everything worked, you can build the included basic EEROS project by 
 ```
 scp build/template_project ost@192.168.7.2:/tmp
 ```
-Follow the instructions on the command line and after copying the file, you can ssh into the Beaglebone Blue with
+When prompted for the password please enter `ost`. After copying the file, you can ssh into the Beaglebone Blue with
 ```
 ssh ost@192.168.7.2
 ```
-On the beaglebone blue you can then start the application with
+The password is again `ost`. On the beaglebone blue you can then start the application with
 ```
 /tmp/template_project
 ```
