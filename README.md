@@ -17,7 +17,7 @@ In the following sections it is assumed that you work with visual studio code.
 Work through the following steps to start developing your EEROS application with this container:
 * Clone this repository
 ```
-git clone https://github.com/jonas-frei/amrs-docker.git
+git clone https://github.com/jonas-frei/eeros-docker-bbblue.git
 ```
 * Open the folder with the cloned repository inside visual studio code
 * Press `F1` and select `Remote-Containers: Open Folder in Container...`. Then select the current folder and wait until the container is up and running (this might take several minutes for the first time since it has to download the container).
