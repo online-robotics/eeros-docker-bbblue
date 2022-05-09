@@ -15,6 +15,8 @@ public:
         // Connect subblocks, initialize variables, ...
     }
 
+    // Implement getter functions for the subsystem inputs
+
     virtual void run()
     {
         // Calculate output values, set timestamps and 
