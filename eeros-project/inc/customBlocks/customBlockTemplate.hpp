@@ -2,20 +2,18 @@
 #define CUSTOMBLOCKTEMPLATE_HPP_
 
 #include <eeros/control/Blockio.hpp>
-// Include header files for the inputs, outputs and subblocks
+// Include header files for the subblocks
 
 using namespace eeros::control;
 
 template <typename T = double>
-class CustomBlockName : public Blockio<1,1,T>
+class CustomBlockName : public Blockio<1,1,T>   // Set the number of inputs and outputs
 {
 public:
     CustomBlockName() 
     {
         // Connect subblocks, initialize variables, ...
     }
-    
-    // Implement getter functions for the inputs and outputs
 
     virtual void run()
     {
@@ -24,7 +22,7 @@ public:
     }
 
 protected:
-    // Define inputs, outputs, intermediate variables and subblocks
+    // Define intermediate variables and subblocks
 };
 
 #endif //CUSTOMBLOCKTEMPLATE_HPP_
