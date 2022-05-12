@@ -25,15 +25,15 @@ git clone https://github.com/jonas-frei/eeros-docker-bbblue.git
 # Test the installation
 You will need a [Beaglebone Blue](https://beagleboard.org/blue) with the [latest EEROS image](https://gitlab.ost.ch/tech/inf/public/meta-ost/-/package_files/2794/download) installed to test if everything worked. You can build the included basic EEROS project by clicking on the build button in the taskbar at the bottom of the visual studio code window. Once the build finished successfully you can connect the Beaglebone Blue over USB. Make sure that the SD card with the EEROS image is inserted and that you press and hold the SD card button on the Beaglebone Blue while applying power. Once the Beaglebone Blue finished booting you can copy the executable with
 ```
-scp build/template_project ost@192.168.7.2:/tmp
+scp build/template_project root@192.168.7.2:
 ```
-When prompted for the password please enter `ost`. After copying the file, you can ssh into the Beaglebone Blue with
+After copying the file, you can ssh into the Beaglebone Blue with
 ```
-ssh ost@192.168.7.2
+ssh root@192.168.7.2
 ```
-The password is again `ost`. On the Beaglebone Blue you can then start the application with
+On the Beaglebone Blue you can then start the application with
 ```
-/tmp/template_project
+./template_project
 ```
 You should see an output similar to the following if everything went well
 ```
