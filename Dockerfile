@@ -9,5 +9,7 @@ RUN chmod +x /tmp/ost-distro-glibc-x86_64-ost-image-cortexa8hf-neon-bblue-toolch
 RUN /tmp/ost-distro-glibc-x86_64-ost-image-cortexa8hf-neon-bblue-toolchain-1.0.sh
 RUN rm /tmp/ost-distro-glibc-x86_64-ost-image-cortexa8hf-neon-bblue-toolchain-1.0.sh
 RUN echo 'source /opt/ost-devel/1.0/environment-setup-cortexa8hf-neon-poky-linux-gnueabi' >> /root/.bashrc
+ADD D.hpp /opt/ost-devel/1.0/sysroots/cortexa8hf-neon-poky-linux-gnueabi/usr/include/eeros/control/D.hpp
+RUN ln -s /opt/ost-devel/1.0/sysroots/cortexa8hf-neon-poky-linux-gnueabi/usr/include/gnu/stubs-hard.h /opt/ost-devel/1.0/sysroots/cortexa8hf-neon-poky-linux-gnueabi/usr/include/gnu/stubs-soft.h
 
 CMD [ "/bin/bash" ]
