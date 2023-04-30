@@ -32,7 +32,6 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           tags: |
             type=semver,pattern={{version}}
-          labels: org.opencontainers.image.description=EEROS Development Container for the Beaglebone Blue
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
@@ -41,3 +40,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=EEROS Development Container for the Beaglebone Blue
