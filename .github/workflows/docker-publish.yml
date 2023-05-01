@@ -28,22 +28,22 @@ jobs:
         git push origin HEAD:main
 
     - name: Update release tag
-    uses: actions/github-script@v6
-    with:
-      script: |
-        const github = require('@actions/github');
-        const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
-        const { owner, repo } = github.context.repo;
-        const releaseId = github.context.payload.release.id;
-        const commitSha = github.context.sha;
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const github = require('@actions/github');
+          const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
+          const { owner, repo } = github.context.repo;
+          const releaseId = github.context.payload.release.id;
+          const commitSha = github.context.sha;
 
-        return octokit.repos.updateRelease({
-          owner: owner,
-          repo: repo,
-          release_id: releaseId,
-          tag_name: '${{ github.ref }}',
-          target_commitish: commitSha
-        });
+          return octokit.repos.updateRelease({
+            owner: owner,
+            repo: repo,
+            release_id: releaseId,
+            tag_name: '${{ github.ref }}',
+            target_commitish: commitSha
+          });
 
   build-and-push-image:
     runs-on: ubuntu-latest
