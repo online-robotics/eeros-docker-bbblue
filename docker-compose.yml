@@ -2,6 +2,6 @@ version: '3.7'
 
 services:
   eeros_docker_bbblue:
-    image: ghcr.io/online-robotics/eeros-docker-bbblue:1.0.6
+    image: ghcr.io/online-robotics/eeros-docker-bbblue:1.0.17
     network_mode: host
     tty: true
