@@ -1,8 +1,8 @@
 name: Create and publish a Docker image
 
 on:
-  push:
-    tags: ['v*.*.*']
+  release:
+    types: [created]
 
 jobs:
   update-docker-compose:
@@ -26,6 +26,24 @@ jobs:
         git add docker-compose.yml
         git commit -m "Update docker-compose.yml with $GITHUB_REF_NAME"
         git push origin HEAD:main
+
+    - name: Update release tag
+    uses: actions/github-script@v6
+    with:
+      script: |
+        const github = require('@actions/github');
+        const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
+        const { owner, repo } = github.context.repo;
+        const releaseId = github.context.payload.release.id;
+        const commitSha = github.context.sha;
+
+        return octokit.repos.updateRelease({
+          owner: owner,
+          repo: repo,
+          release_id: releaseId,
+          tag_name: '${{ github.ref }}',
+          target_commitish: commitSha
+        });
 
   build-and-push-image:
     runs-on: ubuntu-latest
