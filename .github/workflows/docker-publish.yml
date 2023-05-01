@@ -5,6 +5,23 @@ on:
     tags: ['v*.*.*']
 
 jobs:
+  update-docker-compose:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Update docker-compose.yml
+      run: |
+        sed -i "s/image: ghcr.io\/online-robotics\/eeros-docker-bbblue:[0-9]\+\.[0-9]\+\.[0-9]\+/image: ghcr.io\/online-robotics\/eeros-docker-bbblue:$GITHUB_REF_NAME/" docker-compose.yml
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -a -m "Update docker-compose.yml with $GITHUB_REF_NAME"
+        git push
+
   build-and-push-image:
     runs-on: ubuntu-latest
     permissions:
