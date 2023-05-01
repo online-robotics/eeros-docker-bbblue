@@ -27,7 +27,7 @@ jobs:
 
     - name: Update release tag
       run: |
-        git tag -f ${{ github.ref }} $(git rev-parse HEAD)
+        git tag -f ${GITHUB_REF#refs/tags/} $(git rev-parse HEAD)
         git push -f origin ${{ github.ref }}
 
   build-and-push-image:
