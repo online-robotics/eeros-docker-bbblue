@@ -23,7 +23,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -a -m "Update docker-compose.yml with $GITHUB_REF_NAME"
-        git push
+        git push origin HEAD:<name-of-branch>
 
   build-and-push-image:
     runs-on: ubuntu-latest
