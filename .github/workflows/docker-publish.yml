@@ -22,7 +22,8 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -a -m "Update docker-compose.yml with $GITHUB_REF_NAME"
+        git add docker-compose.yml
+        git commit -m "Update docker-compose.yml with $GITHUB_REF_NAME"
         git push origin HEAD:<name-of-branch>
 
   build-and-push-image:
