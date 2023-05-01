@@ -25,7 +25,7 @@ jobs:
         git add docker-compose.yml
         git commit -m "Update docker-compose.yml with $GITHUB_REF_NAME"
         git push origin HEAD:<name-of-branch>
-
+        
   build-and-push-image:
     runs-on: ubuntu-latest
     permissions:
