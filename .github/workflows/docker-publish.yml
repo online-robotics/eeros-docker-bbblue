@@ -7,8 +7,6 @@ on:
 jobs:
   update-docker-compose:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -31,17 +29,17 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          const github = require('@actions/github');
-          const octokit = new github.GitHub(process.env.GITHUB_TOKEN);
-          const { owner, repo } = github.context.repo;
-          const releaseId = github.context.payload.release.id;
-          const commitSha = github.context.sha;
+          const gh = require('@actions/github');
+          const octokit = new gh.GitHub(process.env.GITHUB_TOKEN);
+          const { owner, repo } = gh.context.repo;
+          const releaseId = gh.context.payload.release.id;
+          const commitSha = gh.context.sha;
 
           return octokit.repos.updateRelease({
             owner: owner,
             repo: repo,
             release_id: releaseId,
-            tag_name: '${{ github.ref }}',
+            tag_name: '${{ gh.ref }}',
             target_commitish: commitSha
           });
 
