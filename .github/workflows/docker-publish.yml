@@ -26,16 +26,9 @@ jobs:
         git push origin HEAD:main
 
     - name: Update release tag
-      uses: actions/github-script@v6
-      with:
-        script: |
-          github.rest.repos.updateRelease({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            release_id: context.payload.release.id,
-            tag_name: '${{ github.ref }}',
-            target_commitish: context.sha
-          })
+      run: |
+        git tag -f ${{ github.ref }} $(git rev-parse HEAD)
+        git push -f origin ${{ github.ref }}
 
   build-and-push-image:
     runs-on: ubuntu-latest
