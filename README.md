@@ -1,29 +1,26 @@
 # eeros-docker-bbblue
-This repository provides a docker container with the latest EEROS development environment for the Beaglebone Blue installed and setup. Thus simplifying the EEROS installation process and getting you right into coding and developing.
+This repository provides a Docker container with the latest EEROS development environment installed and configured for the Beaglebone Blue. This simplifies the EEROS installation process and allows you to start coding and developing straight away.
 
 # Prerequisites
-You will need to following to use this container:
+You will need to install [Docker](https://docs.docker.com/get-docker/) to use this container.
 
-* A working [Docker](https://docs.docker.com/get-docker/) installation. Please choose the appropriate one for your host system.
-* A working [Docker-Compose](https://docs.docker.com/compose/install/) installation. Please choose the appropriate one for your host system.
-
-Further it is recommended to use [visual studio code](https://code.visualstudio.com/) together with the following extensions:
+It is recommended to use [Visual Studio Code](https://code.visualstudio.com/) together with the following extensions:
 * [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 * [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 
-In the following sections it is assumed that you work with visual studio code.
+In the following sections it is assumed that you work with Visual Studio Code.
 
 # Getting started
 Work through the following steps to start developing your EEROS application with this container:
 * Clone this repository
 ```
-git clone https://github.com/jonas-frei/eeros-docker-bbblue.git
+git clone https://github.com/online-robotics/eeros-docker-bbblue.git
 ```
 * Open the folder with the cloned repository inside visual studio code
-* Press `F1` and select `Remote-Containers: Open Folder in Container...`. Then select the current folder and wait until the container is up and running (this might take several minutes for the first time since it has to download the container).
+* Press `F1` and select `Dev Containers: Reopen Folder in Container`. Then wait for the container to start (this may take a few minutes the first time as it needs to download the container).
 
 # Test the installation
-You will need a [Beaglebone Blue](https://beagleboard.org/blue) with the [latest EEROS image](https://gitlab.ost.ch/tech/inf/public/yocto/meta-mse-tsm-autmobros/-/package_files/5935/download) installed to test if everything worked. You can build the included basic EEROS project by clicking on the build button in the taskbar at the bottom of the visual studio code window. Once the build finished successfully you can connect the Beaglebone Blue over USB. Make sure that the SD card with the EEROS image is inserted and that you press and hold the SD card button on the Beaglebone Blue while applying power. Once the Beaglebone Blue finished booting you can copy the executable with
+You will need a [Beaglebone Blue](https://beagleboard.org/blue) with the [latest EEROS image](https://gitlab.ost.ch/tech/inf/public/yocto/meta-mse-tsm-autmobros/-/package_files/12764/download) installed to test if everything works. You can build the supplied basic EEROS project by clicking the Build button in the taskbar at the bottom of the Visual Studio code window. Once the build has completed successfully, you can connect the Beaglebone Blue via USB. Ensure that the SD card containing the EEROS image is inserted and press and hold the SD card button on the Beaglebone Blue while switching it on.  Once the Beaglebone Blue has finished booting, you can copy the executable file:
 ```
 scp build/template_project root@192.168.7.2:
 ```
