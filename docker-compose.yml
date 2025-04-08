@@ -1,5 +1,5 @@
 services:
   eeros_docker_bbblue:
-    image: ghcr.io/online-robotics/eeros-docker-bbblue:1.0.9
+    image: ghcr.io/online-robotics/eeros-docker-bbblue:1.1.0
     network_mode: host
     tty: true
