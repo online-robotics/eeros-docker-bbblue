@@ -14,6 +14,7 @@ RUN apt-get update && apt-get upgrade -y && \
     iputils-ping \
     python3 \
     wget \
+    openssh-client \
     xz-utils && \
     rm -rf /var/lib/apt/lists/*
 
